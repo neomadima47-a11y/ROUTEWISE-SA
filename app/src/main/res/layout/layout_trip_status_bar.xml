@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#f2020617"
+    app:strokeColor="#1e293b"
+    app:strokeWidth="1dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvRemainingTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="42 min"
+                    android:textColor="#10b981"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDistanceAndEta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="48.5 km • ETA 17:35"
+                    android:textColor="#cbd5e1"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnPrevStep"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:src="@drawable/ic_chevron_left"
+                app:tint="#cbd5e1" />
+
+            <ImageButton
+                android:id="@+id/btnNextStep"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:src="@drawable/ic_chevron_right"
+                app:tint="#cbd5e1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddStop"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginStart="8dp"
+                android:text="Add Stop"
+                android:textColor="#14b8a6"
+                android:textSize="11sp"
+                app:icon="@drawable/ic_add"
+                app:iconTint="#14b8a6"
+                app:backgroundTint="#134e4a"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/tripProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            android:progress="35"
+            app:trackColor="#1e293b"
+            app:indicatorColor="#10b981"
+            app:trackCornerRadius="4dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

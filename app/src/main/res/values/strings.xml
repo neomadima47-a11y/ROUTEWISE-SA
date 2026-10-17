@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RouteWise SA</string>
+    <string name="maptiler_api_key">JhXKARTgXfWBUYsXkPWK</string>
+    <string name="title_map">Live Navigation Map</string>
+    <string name="title_alerts">Live Traffic Alerts</string>
+    <string name="title_plan">Trip Corridor Planner</string>
+    <string name="title_chat">AI Road Assistant</string>
+    <string name="title_profile">User Profile</string>
+    <string name="title_report">Report Hazard</string>
+    <string name="ai_scout_copilot">AI Scout Copilot</string>
+    <string name="report_hazard_banner">Report Road Hazard (+10 pts)</string>
+    <string name="online">Online</string>
+    <string name="ai_desc">South African road rules &amp; traffic intelligence</string>
+    <string name="chat_hint">Ask about N1 traffic, robots, or rules...</string>
+    <string name="save_changes">Save Changes</string>
+
+    <!-- Settings -->
+    <string name="settings_icon">Settings Icon</string>
+    <string name="settings_app_preferences_title">App &amp; Location Preferences</string>
+    <string name="settings_app_preferences_desc">Configure map styling, voice alerts, and SA driving notifications</string>
+    <string name="settings_section_map_display">MAP &amp; NAVIGATION DISPLAY</string>
+    <string name="settings_unit_selector_title">Speed &amp; Distance Units</string>
+    <string name="settings_unit_selector_desc">Metric (Kilometers - standard in SA)</string>
+    <string name="unit_kmh">km/h</string>
+    <string name="unit_mph">mph</string>
+    <string name="settings_section_voice_guidance">VOICE GUIDANCE &amp; AUDIO ALERTS</string>
+    <string name="settings_default_title">Setting Title</string>
+    <string name="settings_default_desc">Setting description goes here.</string>
+
+    <!-- Auth -->
+    <string name="auth_tagline">Your South African Road Companion</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="signup_prompt">Don\'t have an account? Sign up</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="province">Province</string>
+    <string name="city">City</string>
+    <string name="create_account">Create Account</string>
+    <string name="complete_registration">Complete Registration (+50 Pts)</string>
+    <string name="sign_in_to_routewise">Sign In to RouteWise</string>
+    <string name="auth_success_welcome">Welcome, %s!</string>
+    <string name="impact_points_credited">+50 Impact Points Credited</string>
+    <string name="entering_routewise">Entering RouteWise SA...</string>
+    <string name="active_count_format">%d Active</string>
+</resources>

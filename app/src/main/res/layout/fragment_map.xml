@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020617">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top Floating Toolbar: 3D Perspective Control -->
+    <LinearLayout
+        android:id="@+id/topMapControlsToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/scrollCategoryChips"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnTilt3D"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circle_slate"
+            android:src="@drawable/ic_plan"
+            app:tint="#10b981"
+            android:contentDescription="3D Cockpit Tilt" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSearchDestination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="24dp"
+        app:cardBackgroundColor="#f20f172a"
+        app:strokeColor="#334155"
+        app:strokeWidth="1dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp">
+
+            <ImageView
+                android:id="@+id/btnExecuteSearch"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:background="@drawable/bg_circle_slate"
+                android:src="@drawable/ic_search"
+                app:tint="#10b981"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Search" />
+
+            <AutoCompleteTextView
+                android:id="@+id/etMapSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@null"
+                android:hint="Search place or destination..."
+                android:textColor="#ffffff"
+                android:textColorHint="#94a3b8"
+                android:textSize="14sp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:completionThreshold="1"
+                android:autofillHints="postalAddress" />
+
+            <ImageView
+                android:id="@+id/btnVoiceSearch"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_circle_slate"
+                android:src="@drawable/ic_search"
+                app:tint="#38bdf8"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Voice Search" />
+
+            <ImageView
+                android:id="@+id/btnAdvancedPlan"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:background="@drawable/bg_circle_slate"
+                android:src="@drawable/ic_plan"
+                app:tint="#a855f7"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Plan Route" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Quick Category Assistance Chips -->
+    <HorizontalScrollView
+        android:id="@+id/scrollCategoryChips"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="6dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/cardSearchDestination"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chipCategoryFuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="⛽ Fuel"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:background="@drawable/bg_rounded_slate"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/chipCategoryFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🍔 Food"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:background="@drawable/bg_rounded_slate"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/chipCategoryShopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🛍️ Shopping"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:background="@drawable/bg_rounded_slate"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/chipCategoryHospitals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🏥 Hospitals"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:background="@drawable/bg_rounded_slate"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/chipCategoryParking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🅿️ Parking"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:background="@drawable/bg_rounded_slate"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/chipCategoryAirports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="✈️ Airports"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:background="@drawable/bg_rounded_slate"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Place & Route Assistance Card Panel -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPlaceAssistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#f20f172a"
+        app:strokeColor="#1e293b"
+        app:strokeWidth="1dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutTripStatusBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvPlaceCategoryBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🛍️ Shopping Mall"
+                    android:textColor="#34d399"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_card_selected"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/btnSpeakPlaceDetails"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_circle_slate"
+                    android:src="@drawable/ic_volume_up"
+                    app:tint="#10b981"
+                    android:contentDescription="Voice Readout" />
+
+                <ImageButton
+                    android:id="@+id/btnClosePlaceCard"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_circle_slate"
+                    android:src="@drawable/ic_close"
+                    app:tint="#f43f5e"
+                    android:contentDescription="Close Card" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPlaceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menlyn Park Shopping Centre"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvPlaceAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atterbury Rd, Menlyn, Pretoria, Gauteng"
+                android:textColor="#cbd5e1"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvTripMetrics"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="⏱️ ~15 min drive • 14.2 km away"
+                    android:textColor="#10b981"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvCorridorAdvice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Corridor: N1 North Highway"
+                    android:textColor="#38bdf8"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartNavFromCard"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="🚀 Start Navigation"
+                    android:textColor="#020617"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#10b981"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlanRouteFromCard"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="🗺️ Plan Route"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    app:backgroundTint="#1e293b"
+                    app:strokeColor="#334155"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Full Alert Detail Card Modal -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardAlertDetailModal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#f20f172a"
+        app:strokeColor="#e11d48"
+        app:strokeWidth="1.5dp"
+        app:cardElevation="12dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutTripStatusBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvAlertSeverityBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚨 CRITICAL HAZARD"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_severity_critical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/btnSpeakAlertModal"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_circle_slate"
+                    android:src="@drawable/ic_volume_up"
+                    app:tint="#10b981"
+                    android:contentDescription="Audio Speech Readout" />
+
+                <ImageButton
+                    android:id="@+id/btnCloseAlertModal"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_circle_slate"
+                    android:src="@drawable/ic_close"
+                    app:tint="#f43f5e"
+                    android:contentDescription="Close Modal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAlertTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accident: M1 South near Grayston Dr"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvAlertLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location: Sandton, Gauteng"
+                android:textColor="#94a3b8"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tvAlertNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Collision blocking center lane on M1 South. Emergency services on scene."
+                android:textColor="#cbd5e1"
+                android:textSize="13sp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvAlertDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📍 3.8 km away • 15 mins ago"
+                    android:textColor="#38bdf8"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAlertUpvoteCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👍 28 Drivers Confirmed"
+                    android:textColor="#34d399"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpvoteModal"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="👍 Confirm (+1)"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    app:backgroundTint="#0f766e"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNavigateAroundHazard"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="🧭 Detour / Route Around"
+                    android:textColor="#020617"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#10b981"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <include
+        android:id="@+id/layoutNavigationHud"
+        layout="@layout/layout_navigation_hud"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/fabContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabRecenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#0f172a"
+            app:tint="#10b981"
+            app:srcCompat="@drawable/ic_my_location"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabTraffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#0f172a"
+            app:tint="#38bdf8"
+            app:srcCompat="@drawable/ic_traffic"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnChatbotScout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="@string/ai_scout_copilot"
+            app:backgroundTint="@color/primary_emerald"
+            app:fabCustomSize="48dp"
+            app:maxImageSize="24dp"
+            app:rippleColor="@color/primary_emerald_light"
+            android:src="@drawable/ic_robot"
+            app:elevation="4dp"
+            app:tint="@color/background_slate_dark" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabReportIncident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#e11d48"
+            app:tint="#ffffff"
+            app:srcCompat="@drawable/ic_add_alert" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/layoutTripStatusBar"
+        layout="@layout/layout_trip_status_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_faq"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_unselected"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/layoutFaqHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <TextView
+            android:id="@+id/tvFaqQuestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Question text?"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/ivFaqChevron"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="#94a3b8" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvFaqAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="14dp"
+        android:paddingBottom="14dp"
+        android:text="Answer text goes here..."
+        android:textColor="#cbd5e1"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+</LinearLayout>

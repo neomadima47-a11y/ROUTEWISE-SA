@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.RouteWiseSA" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_emerald</item>
+        <item name="colorOnPrimary">@color/text_dark_contrast</item>
+        <item name="colorPrimaryContainer">@color/primary_emerald_container</item>
+        <item name="colorOnPrimaryContainer">@color/primary_emerald_light</item>
+        <item name="colorSecondary">@color/secondary_teal</item>
+        <item name="colorOnSecondary">@color/text_dark_contrast</item>
+
+        <item name="android:colorBackground">@color/background_slate_dark</item>
+        <item name="colorSurface">@color/surface_slate_card</item>
+        <item name="colorOnSurface">@color/text_primary_white</item>
+        <item name="colorSurfaceVariant">@color/surface_slate_elevated</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary_slate</item>
+
+        <item name="android:statusBarColor">@color/background_slate_dark</item>
+        <item name="android:navigationBarColor">@color/background_slate_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+</resources>

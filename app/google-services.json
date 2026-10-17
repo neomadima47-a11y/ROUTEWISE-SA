@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "890979373130",
+    "project_id": "routewisesa-fcde8",
+    "storage_bucket": "routewisesa-fcde8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890979373130:android:17e1a59139626377da16b3",
+        "android_client_info": {
+          "package_name": "com.routewise.sa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890979373130-2ot6rm7kl8cp65k14a4aqlbarhn2c7jf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtu93Unj2faFq1RHjjeBCpTzUuyGd0fik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890979373130-2ot6rm7kl8cp65k14a4aqlbarhn2c7jf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

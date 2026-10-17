@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#f2020617"
+    app:strokeColor="#1e293b"
+    app:strokeWidth="1dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivManeuver"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="6dp"
+                android:background="@drawable/bg_rounded_emerald"
+                android:src="@drawable/ic_turn_right"
+                app:tint="#10b981" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:id="@+id/tvDistanceToManeuver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="800 m"
+                    android:textColor="#ffffff"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvRoadInstruction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take Exit 104 toward N1 Pretoria"
+                    android:textColor="#cbd5e1"
+                    android:textSize="13sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_speed_limit_sign"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tvSpeedLimit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="120"
+                    android:textColor="#020617"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/btnToggleVoice"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/bg_circle_slate"
+                android:src="@drawable/ic_volume_up"
+                app:tint="#10b981" />
+
+            <ImageButton
+                android:id="@+id/btnCloseNav"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_circle_slate"
+                android:src="@drawable/ic_close"
+                app:tint="#f43f5e" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp"
+            android:background="#1e293b" />
+
+        <TextView
+            android:id="@+id/tvNextManeuverPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Then: Keep left onto M1 South"
+            android:textColor="#94a3b8"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

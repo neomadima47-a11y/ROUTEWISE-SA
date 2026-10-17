@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020617"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="100dp">
+
+        <!-- Header Plan Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_banner_header"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circle_slate">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_navigation"
+                    app:tint="#10b981" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plan Your Route"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="South African corridor optimization with multi-stop planning"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- POPULAR CORRIDORS -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POPULAR CORRIDORS"
+            android:textColor="#94a3b8"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Corridor 1: N1 North -->
+        <LinearLayout
+            android:id="@+id/corridorN1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_unselected"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N1 North Highway"
+                    android:textColor="#10b981"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sandton CBD → Pretoria Menlyn"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~42 min"
+                android:textColor="#38bdf8"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Corridor 2: N2 Settlers Way -->
+        <LinearLayout
+            android:id="@+id/corridorN2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_unselected"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N2 Settlers Way"
+                    android:textColor="#10b981"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V&amp;A Waterfront → Cape Town Intl Airport"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~23 min"
+                android:textColor="#38bdf8"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Corridor 3: M4 Ruth First -->
+        <LinearLayout
+            android:id="@+id/corridorM4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_unselected"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M4 Ruth First Coastal Fwy"
+                    android:textColor="#10b981"
+                    android:textStyle="bold"
+                    android:textSize="13sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Durban Beachfront → Umhlanga Rocks"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~19 min"
+                android:textColor="#38bdf8"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ORIGIN & DESTINATION CARD WITH WAYPOINTS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- Start Location -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/bg_circle_slate"
+                    android:text="A"
+                    android:textColor="#10b981"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="START LOCATION"
+                    android:textColor="#94a3b8"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp" />
+
+                <TextView
+                    android:id="@+id/btnUseGps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✓ Use Live GPS"
+                    android:textColor="#10b981"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <AutoCompleteTextView
+                android:id="@+id/etStartLocation"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:hint="Start point (e.g. My Location, Sandton...)"
+                android:text="My Location (Sandton, Johannesburg)"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="10dp"
+                android:inputType="textAutoCorrect|textCapWords"
+                android:completionThreshold="1"
+                android:popupBackground="@drawable/bg_rounded_slate" />
+
+            <!-- Dynamic Waypoints Container -->
+            <LinearLayout
+                android:id="@+id/containerWaypoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- Destination Location -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/bg_circle_slate"
+                    android:text="B"
+                    android:textColor="#f43f5e"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DESTINATION"
+                    android:textColor="#94a3b8"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <AutoCompleteTextView
+                android:id="@+id/etDestination"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:hint="Where to? (e.g. Menlyn Park, Cape Town...)"
+                android:text="Menlyn Park, Pretoria"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="12dp"
+                android:inputType="textAutoCorrect|textCapWords"
+                android:completionThreshold="1"
+                android:popupBackground="@drawable/bg_rounded_slate" />
+
+            <!-- Quick Add Waypoint Along Route Chips -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Add Along Route:"
+                android:textColor="#94a3b8"
+                android:textSize="10sp"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipAddGas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:text="⛽ Gas"
+                    android:textColor="#f59e0b"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipAddFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:text="🍽 Food"
+                    android:textColor="#f43f5e"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipAddCoffee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:text="☕ Coffee"
+                    android:textColor="#10b981"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/chipAddAtm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:text="🏧 ATM"
+                    android:textColor="#38bdf8"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- MODE OF TRANSPORT (4 Options) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MODE OF TRANSPORT"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!-- Car -->
+                <LinearLayout
+                    android:id="@+id/modeCar"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card_selected"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_traffic"
+                        app:tint="#10b981" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Car"
+                        android:textColor="#10b981"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Taxi / Bus -->
+                <LinearLayout
+                    android:id="@+id/modeTaxi"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="2dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_traffic"
+                        app:tint="#94a3b8" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taxi/Bus"
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- Bike -->
+                <LinearLayout
+                    android:id="@+id/modeBike"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="2dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_navigation"
+                        app:tint="#94a3b8" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bike"
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- Walk -->
+                <LinearLayout
+                    android:id="@+id/modeWalk"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginStart="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_person"
+                        app:tint="#94a3b8" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Walk"
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ROUTE STRATEGY (Fastest, Shortest, Eco-Save) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ROUTE STRATEGY"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/stratFastest"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_severity_selected"
+                    android:gravity="center"
+                    android:text="Fastest"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="3dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/stratShortest"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:text="Shortest"
+                    android:textColor="#94a3b8"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="2dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/stratEco"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:text="Eco-Save"
+                    android:textColor="#94a3b8"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="3dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ROUTE AVOIDANCE CHECKBOXES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ROUTE AVOIDANCE"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="8dp" />
+
+            <CheckBox
+                android:id="@+id/cbAvoidTolls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Avoid Toll Plazas (e-Tolls)"
+                android:textColor="#ffffff"
+                android:buttonTint="#10b981" />
+
+            <CheckBox
+                android:id="@+id/cbAvoidFreeways"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Avoid Freeways / Highways"
+                android:textColor="#ffffff"
+                android:buttonTint="#10b981" />
+
+            <CheckBox
+                android:id="@+id/cbAvoidGravel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Avoid Dirt / Gravel Roads"
+                android:textColor="#ffffff"
+                android:buttonTint="#10b981" />
+        </LinearLayout>
+
+        <!-- CALCULATE & START NAVIGATION BUTTON -->
+        <Button
+            android:id="@+id/btnCalculateRoute"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_rounded_emerald"
+            android:text="Calculate Best Route &amp; Start Navigation"
+            android:textColor="#020617"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_navigation"
+            android:drawableTint="#020617"
+            android:paddingHorizontal="20dp"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

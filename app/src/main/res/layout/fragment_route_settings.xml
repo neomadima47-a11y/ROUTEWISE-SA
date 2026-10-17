@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020617"
+    android:fillViewport="true"
+    tools:context=".ui.settings.SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="80dp">
+
+        <!-- Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_unselected"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circle_slate">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_settings"
+                    app:tint="#10b981"
+                    android:contentDescription="@string/settings_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_app_preferences_title"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_app_preferences_desc"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section 1: MAP & NAVIGATION DISPLAY -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_unselected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_map"
+                    app:tint="#94a3b8"
+                    android:importantForAccessibility="no" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_section_map_display"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Switch Items -->
+            <include
+                android:id="@+id/settingLiveTraffic"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1e293b" android:layout_marginVertical="12dp" />
+
+            <include
+                android:id="@+id/settingNightTheme"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1e293b" android:layout_marginVertical="12dp" />
+
+            <include
+                android:id="@+id/settingSpeedWarnings"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1e293b" android:layout_marginVertical="12dp" />
+
+            <!-- Unit Selector -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_unit_selector_title"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_unit_selector_desc"
+                        android:textColor="#94a3b8"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:padding="4dp">
+                    <TextView
+                        android:id="@+id/btnUnitKm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card_selected"
+                        android:text="@string/unit_kmh"
+                        android:textColor="#34d399"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp" />
+                    <TextView
+                        android:id="@+id/btnUnitMph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/unit_mph"
+                        android:textColor="#94a3b8"
+                        android:textSize="11sp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section 2: VOICE GUIDANCE & AUDIO ALERTS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_unselected"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_volume_up"
+                    app:tint="#94a3b8"
+                    android:importantForAccessibility="no" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_section_voice_guidance"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/settingTurnByTurn"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1e293b" android:layout_marginVertical="12dp" />
+
+            <include
+                android:id="@+id/settingAccidentWarnings"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1e293b" android:layout_marginVertical="12dp" />
+
+            <include
+                android:id="@+id/settingPoliceAlerts"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1e293b" android:layout_marginVertical="12dp" />
+
+            <include
+                android:id="@+id/settingRoadworkAlerts"
+                layout="@layout/layout_item_settings_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="#0f172a"
+    app:strokeColor="#1e293b"
+    app:strokeWidth="1dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Badges Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Incident Type Badge -->
+            <TextView
+                android:id="@+id/tvIncidentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_slate"
+                android:text="💥 Accident"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Route Badge -->
+            <TextView
+                android:id="@+id/tvRouteBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_selected"
+                android:text="N1 North"
+                android:textColor="#34d399"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Direction Badge -->
+            <TextView
+                android:id="@+id/tvDirectionBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_slate"
+                android:text="Outbound"
+                android:textColor="#cbd5e1"
+                android:textSize="11sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- Severity Badge -->
+            <TextView
+                android:id="@+id/tvSeverityBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_severity_critical"
+                android:text="High Severity"
+                android:textColor="#f87171"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Time Ago -->
+            <TextView
+                android:id="@+id/tvTimeAgo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19m ago"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:drawableStart="@drawable/ic_traffic"
+                android:drawableTint="#94a3b8"
+                android:drawablePadding="4dp" />
+        </LinearLayout>
+
+        <!-- Road Name -->
+        <TextView
+            android:id="@+id/tvRoadName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="N1 Northbound (Ben Schoeman Fwy)"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <!-- City & Province -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Midrand, Gauteng"
+            android:textColor="#94a3b8"
+            android:textSize="11sp"
+            android:layout_marginTop="2dp" />
+
+        <!-- Status Alert Box -->
+        <LinearLayout
+            android:id="@+id/layoutStatusBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_slate"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/bg_circle_slate"
+                android:backgroundTint="#fbbf24"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvStatusBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Lanes Obstructed • 35 min delay"
+                android:textColor="#fde68a"
+                android:textStyle="bold"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Multi-vehicle collision on N1 North after Allandale Rd. Right and middle lanes obstructed. Heavy backlog reaching Buccleuch."
+            android:textColor="#e2e8f0"
+            android:textSize="13sp"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginTop="10dp" />
+
+        <!-- Bottom Actions Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="14dp"
+            android:paddingTop="10dp">
+
+            <!-- Helpful Upvote Button -->
+            <TextView
+                android:id="@+id/btnHelpful"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:text="👍 42 Helpful"
+                android:textColor="#cbd5e1"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Dismiss -->
+            <TextView
+                android:id="@+id/btnDismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dismiss"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- View on Map -->
+            <TextView
+                android:id="@+id/btnViewOnMap"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_card_selected"
+                android:text="📍 View on Map"
+                android:textColor="#34d399"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

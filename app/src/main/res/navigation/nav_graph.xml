@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_map">
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.routewise.sa.ui.map.MapFragment"
+        android:label="RouteWise Map"
+        tools:layout="@layout/fragment_map">
+
+        <action
+            android:id="@+id/action_map_to_plan"
+            app:destination="@id/navigation_plan" />
+
+        <action
+            android:id="@+id/action_map_to_alerts"
+            app:destination="@id/navigation_alerts" />
+
+        <action
+            android:id="@+id/action_map_to_report"
+            app:destination="@id/navigation_report" />
+
+        <action
+            android:id="@+id/action_map_to_chat"
+            app:destination="@id/navigation_chat" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_alerts"
+        android:name="com.routewise.sa.ui.alerts.LiveAlertsFragment"
+        android:label="Live Alerts"
+        tools:layout="@layout/fragment_live_alerts" />
+
+    <fragment
+        android:id="@+id/navigation_plan"
+        android:name="com.routewise.sa.ui.plan.RoutePlanningFragment"
+        android:label="Plan Trip"
+        tools:layout="@layout/fragment_route_planning" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.routewise.sa.ui.chat.ChatbotFragment"
+        android:label="AI Scout"
+        tools:layout="@layout/fragment_chatbot" />
+
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.routewise.sa.ui.report.ReportIncidentFragment"
+        android:label="Report Hazard"
+        tools:layout="@layout/fragment_report_incident" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.routewise.sa.ui.profile.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.routewise.sa.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/navigation_help"
+        android:name="com.routewise.sa.ui.help.HelpSupportFragment"
+        android:label="Help &amp; Emergency" />
+
+</navigation>

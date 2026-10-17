@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Primary & Secondary (Emerald & Teal) -->
+    <color name="primary_emerald">#10B981</color>
+    <color name="primary_emerald_dark">#059669</color>
+    <color name="primary_emerald_light">#34D399</color>
+    <color name="primary_emerald_container">#064E3B</color>
+    <color name="secondary_teal">#14B8A6</color>
+    <color name="secondary_teal_dark">#0D9488</color>
+    <color name="secondary_teal_light">#2DD4BF</color>
+
+    <!-- Canvas, Surfaces & Backgrounds -->
+    <color name="background_slate_dark">#020617</color>
+    <color name="surface_slate_card">#0F172A</color>
+    <color name="surface_slate_elevated">#1E293B</color>
+    <color name="surface_slate_interactive">#334155</color>
+    <color name="border_slate">#1E293B</color>
+    <color name="divider_slate">#334155</color>
+
+    <!-- South African Road Alert Colors -->
+    <color name="hazard_accident_rose">#E11D48</color>
+    <color name="hazard_accident_bg">#4C0519</color>
+    <color name="hazard_pothole_amber">#D97706</color>
+    <color name="hazard_pothole_bg">#451A03</color>
+    <color name="hazard_robot_yellow">#EAB308</color>
+    <color name="hazard_robot_bg">#422006</color>
+    <color name="hazard_police_blue">#2563EB</color>
+    <color name="hazard_police_bg">#172554</color>
+
+    <!-- Typography -->
+    <color name="text_primary_white">#FFFFFF</color>
+    <color name="text_secondary_slate">#CBD5E1</color>
+    <color name="text_muted_slate">#94A3B8</color>
+    <color name="text_disabled_slate">#64748B</color>
+    <color name="text_dark_contrast">#020617</color>
+</resources>

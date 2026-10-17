@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020617"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="100dp">
+
+        <!-- Top Incentive Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_banner_header"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circle_slate">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_warning"
+                    app:tint="#10b981" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Report Road Hazard"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earn +10 Impact Points for each verified road alert"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+10 PTS"
+                android:textColor="#34d399"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:background="@drawable/bg_card_selected"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp" />
+        </LinearLayout>
+
+        <!-- 1. SELECT INCIDENT TYPE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. SELECT INCIDENT TYPE"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Row 1: Accident / Crash & Broken Robot -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/cardTypeAccident"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_hazard_accident"
+                        app:tint="#e11d48" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accident / Crash"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Collision or vehicle..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardTypeBrokenRobot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_hazard_outage"
+                        app:tint="#eab308" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Broken Robot / Signal"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Load shedding outage..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 2: Pothole & Police Trap -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/cardTypePothole"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_card_selected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_hazard_pothole"
+                        app:tint="#10b981" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pothole / Trench"
+                        android:textColor="#34d399"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Severe tire &amp; wheel..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardTypePoliceTrap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_hazard_police"
+                        app:tint="#2563eb" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Police Speed Trap"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Speed check or road..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 3: Road Works & Road Hazard -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/cardTypeRoadWorks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_hazard_roadworks"
+                        app:tint="#d97706" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Road Works"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Construction, resurfac..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardTypeHazard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_warning"
+                        app:tint="#f59e0b" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Road Hazard / Debris"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stationary vehicle or..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 4: Road Closure & Severe Gridlock -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/cardTypeRoadClosure"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_hazard_closure"
+                        app:tint="#ef4444" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Road Closure"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flooding, protest, or..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardTypeGridlock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_card_unselected"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_traffic"
+                        app:tint="#14b8a6" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Severe Gridlock"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unexpected bumper-to..."
+                        android:textColor="#94a3b8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 2. LOCATION & CORRIDOR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2. LOCATION &amp; CORRIDOR"
+                    android:textColor="#94a3b8"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05" />
+            </LinearLayout>
+
+            <!-- Mode Selector: Single Corridor vs Intersection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REPORTING MODE TOGGLE"
+                android:textColor="#64748b"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/btnModeSingle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/bg_card_selected"
+                    android:gravity="center"
+                    android:text="🛣️ Single Road"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/btnModeIntersection"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:text="🚥 Between 2 Roads"
+                    android:textColor="#cbd5e1"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <!-- Single Road Input Layout -->
+            <LinearLayout
+                android:id="@+id/layoutSingleRoadInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ROAD NAME / STREET / CORRIDOR *"
+                    android:textColor="#94a3b8"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/etRoadName"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:hint="Search road, street, or corridor..."
+                        android:textColorHint="#64748b"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="14dp"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:completionThreshold="1"
+                        android:popupBackground="@drawable/bg_rounded_slate" />
+
+                    <ImageButton
+                        android:id="@+id/btnVoiceSearchReport"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:src="@drawable/ic_search"
+                        app:tint="#38bdf8"
+                        android:contentDescription="Voice Search" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Intersection Inputs Layout (Between Two Roads) -->
+            <LinearLayout
+                android:id="@+id/layoutIntersectionInputs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PRIMARY ROAD 1 *"
+                    android:textColor="#94a3b8"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/etRoad1"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:hint="e.g. Nana Sita St, N1 North..."
+                        android:textColorHint="#64748b"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="14dp"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:completionThreshold="1"
+                        android:popupBackground="@drawable/bg_rounded_slate" />
+
+                    <ImageButton
+                        android:id="@+id/btnVoiceRoad1"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:src="@drawable/ic_search"
+                        app:tint="#38bdf8"
+                        android:contentDescription="Voice Search Road 1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="⚡ INTERSECTS WITH ⚡"
+                    android:textColor="#f59e0b"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INTERSECTING ROAD 2 *"
+                    android:textColor="#94a3b8"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/etRoad2"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:hint="e.g. Lilian Ngoyi St, Allandale Rd..."
+                        android:textColorHint="#64748b"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp"
+                        android:paddingHorizontal="14dp"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:completionThreshold="1"
+                        android:popupBackground="@drawable/bg_rounded_slate" />
+
+                    <ImageButton
+                        android:id="@+id/btnVoiceRoad2"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:src="@drawable/ic_search"
+                        app:tint="#38bdf8"
+                        android:contentDescription="Voice Search Road 2" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvIntersectionPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Intersection: Select Primary and Intersecting Road"
+                    android:textColor="#10b981"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+
+            <!-- Popular Quick-Picks -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POPULAR QUICK-PICKS"
+                android:textColor="#64748b"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollCorridorChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/chipIntersectionNana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🚥 Nana Sita &amp; Lilian Ngoyi"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipIntersectionAllandale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🚥 N1 Allandale &amp; New Rd"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipIntersectionRivonia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🚥 Rivonia Rd &amp; Sandton Dr"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipIntersectionM4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🚥 M4 &amp; Sandile Thusi"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipCorridorN1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🛣️ N1 Ben Schoeman"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipCorridorM1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🛣️ M1 Fwy"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipCorridorN3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🛣️ N3 Bypass"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipCorridorR21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🛣️ R21 Airport"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipCorridorRivonia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🛣️ Rivonia Rd"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/chipCorridorWinnie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="🛣️ Winnie Mandela Dr"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"
+                        android:background="@drawable/bg_rounded_slate"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Location Assistance Card Panel -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReportAssistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="#0f172a"
+                app:strokeColor="#10b981"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvVerifiedRoadBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🛣️ Verified Road Segment"
+                            android:textColor="#10b981"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <ImageButton
+                            android:id="@+id/btnSpeakReportDetails"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_circle_slate"
+                            android:src="@drawable/ic_volume_up"
+                            app:tint="#10b981"
+                            android:contentDescription="Voice Readout" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvVerifiedAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="N1 North, Midrand, Gauteng"
+                        android:textColor="#ffffff"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:id="@+id/tvGpsCoords"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="GPS: -25.9983, 28.1278"
+                            android:textColor="#94a3b8"
+                            android:textSize="11sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCopyCoords"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:text="📋 Copy Coords"
+                            android:textColor="#38bdf8"
+                            android:textSize="10sp"
+                            app:backgroundTint="#0f172a"
+                            app:strokeColor="#0284c7"
+                            app:strokeWidth="1dp"
+                            app:cornerRadius="8dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvAssistantGuidance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🤖 Assistant Prompt: Oncoming drivers on N1 North will receive early audio hazard alerts."
+                        android:textColor="#38bdf8"
+                        android:textSize="10sp"
+                        android:layout_marginTop="6dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROVINCE"
+                android:textColor="#94a3b8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/spinnerProvince"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_spinner_slate"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CITY / METRO"
+                android:textColor="#94a3b8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_spinner_slate"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DIRECTION OF TRAVEL"
+                android:textColor="#94a3b8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/spinnerDirection"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_spinner_slate"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HIGHWAY / ROUTE CODE (OPTIONAL)"
+                android:textColor="#94a3b8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etRouteCode"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:hint="e.g. N1, N2, N3, M1, R21"
+                android:textColorHint="#64748b"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:paddingHorizontal="14dp"
+                android:inputType="textCapCharacters" />
+        </LinearLayout>
+
+        <!-- 3. HAZARD SEVERITY & DETAILS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_unselected"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. HAZARD SEVERITY &amp; DETAILS"
+                android:textColor="#94a3b8"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Severity selector -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:id="@+id/btnSeverityLow"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:text="Low"
+                    android:textColor="#cbd5e1"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/btnSeverityModerate"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="@drawable/bg_severity_selected"
+                    android:gravity="center"
+                    android:text="Moderate"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/btnSeverityHigh"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:text="High"
+                    android:textColor="#cbd5e1"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/btnSeverityCritical"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:background="@drawable/bg_rounded_slate"
+                    android:gravity="center"
+                    android:text="Critical"
+                    android:textColor="#cbd5e1"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION &amp; HELPFUL GUIDANCE (OPTIONAL)"
+                android:textColor="#94a3b8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/bg_rounded_slate"
+                android:gravity="top|start"
+                android:hint="Provide context (e.g. 'Right 2 lanes blocked, treat intersection as 4-way stop, debris in fast lane')..."
+                android:textColorHint="#64748b"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:padding="12dp"
+                android:inputType="textMultiLine" />
+        </LinearLayout>
+
+        <!-- Publish Action Button -->
+        <Button
+            android:id="@+id/btnPublishIncident"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_rounded_emerald"
+            android:text="Publish Incident (+10 Points)"
+            android:textColor="#020617"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_send"
+            android:drawableTint="#020617"
+            android:paddingHorizontal="24dp"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

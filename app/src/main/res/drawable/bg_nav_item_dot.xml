@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:gravity="bottom|center_horizontal" android:bottom="2dp">
+                <shape android:shape="oval">
+                    <solid android:color="@color/primary_emerald"/>
+                    <size android:width="4dp" android:height="4dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:drawable="@android:color/transparent"/>
+</selector>
