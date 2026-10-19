@@ -91,11 +91,6 @@ class MainActivity : AppCompatActivity() {
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
-                R.id.drawer_export -> {
-                    Toast.makeText(this, "Exporting project ZIP...", Toast.LENGTH_SHORT).show()
-                    binding.drawerLayout.closeDrawer(GravityCompat.START)
-                    true
-                }
                 else -> {
                     val handled = NavigationUI.onNavDestinationSelected(menuItem, navController)
                     if (handled) binding.drawerLayout.closeDrawer(GravityCompat.START)

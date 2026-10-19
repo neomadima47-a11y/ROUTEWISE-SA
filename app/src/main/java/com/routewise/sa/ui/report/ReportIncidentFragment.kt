@@ -34,6 +34,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.routewise.sa.R
 import com.routewise.sa.RouteWiseApplication
+import com.routewise.sa.data.SessionManager
 import com.routewise.sa.ui.ViewModelFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -165,6 +166,8 @@ class ReportIncidentFragment : Fragment() {
         }
     }
 
+    private lateinit var sessionManager: SessionManager
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -176,6 +179,7 @@ class ReportIncidentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sessionManager = com.routewise.sa.data.SessionManager(requireContext())
         initTextToSpeech()
         initViews(view)
         setupSpinners()
@@ -643,6 +647,8 @@ class ReportIncidentFragment : Fragment() {
                 r
             }
 
+            val activeUser = sessionManager.getUserName().ifEmpty { "Community Driver" }
+
             viewModel.reportHazard(
                 type = selectedType,
                 roadName = road,
@@ -650,7 +656,7 @@ class ReportIncidentFragment : Fragment() {
                 province = spinnerProvince.selectedItem?.toString() ?: "Unknown",
                 desc = etDescription.text.toString(),
                 severity = selectedSeverity,
-                userId = "User123",
+                userId = activeUser,
                 lat = currentSelectedCoords?.first,
                 lng = currentSelectedCoords?.second
             )

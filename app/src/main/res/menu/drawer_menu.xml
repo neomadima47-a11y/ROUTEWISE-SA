@@ -26,11 +26,6 @@
     <item android:title="System">
         <menu>
             <item
-                android:id="@+id/drawer_export"
-                android:icon="@drawable/ic_plan"
-                android:title="Android Studio Project (.ZIP)" />
-
-            <item
                 android:id="@+id/drawer_logout"
                 android:icon="@drawable/ic_close"
                 android:title="Logout" />

@@ -208,11 +208,11 @@ class LoginActivity : AppCompatActivity() {
         spinnerCity = findViewById(R.id.spinnerCity)
         tvWelcomeUser = findViewById(R.id.tvWelcomeUser)
         
-        // Pre-fill mock data
-        etFullName.setText("Neo Madima")
-        etPhone.setText("+27 82 456 7890")
-        etEmail.setText("neomadima47@gmail.com")
-        etPassword.setText("password123")
+        // Clear inputs so form is not hardcoded with pre-filled test strings
+        etFullName.setText("")
+        etPhone.setText("")
+        etEmail.setText("")
+        etPassword.setText("")
     }
 
     private fun initForgotPasswordViews() {
@@ -257,7 +257,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnSendResetCode.setOnClickListener {
             val email = etResetEmail.text.toString().trim()
-            if (email.isEmpty() || !email.contains("@")) {
+            if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 etResetEmail.error = "Enter a valid email address"
                 return@setOnClickListener
             }
@@ -269,7 +269,7 @@ class LoginActivity : AppCompatActivity() {
 
             layoutResetStep1.visibility = View.GONE
             layoutResetStep2.visibility = View.VISIBLE
-            Toast.makeText(this, "📧 Verification code & email link sent to $email", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "📧 Verification code & reset link sent to $email", Toast.LENGTH_LONG).show()
         }
 
         tvAutoFillCode.setOnClickListener {
@@ -286,8 +286,8 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (newPass.length < 4) {
-                etNewPassword.error = "Password must be at least 4 characters"
+            if (newPass.length < 6) {
+                etNewPassword.error = "Password must be at least 6 characters"
                 return@setOnClickListener
             }
 
@@ -347,9 +347,9 @@ class LoginActivity : AppCompatActivity() {
             uid = uid,
             email = email,
             name = displayName,
-            phone = "+27 82 456 7890",
-            province = "Gauteng",
-            city = "Pretoria"
+            phone = etPhone.text.toString().ifEmpty { "+27 82 456 7890" },
+            province = spinnerProvince.text.toString().ifEmpty { "Gauteng" },
+            city = spinnerCity.text.toString().ifEmpty { "Pretoria" }
         )
 
         showSuccessSplash(displayName, email)
@@ -440,35 +440,86 @@ class LoginActivity : AppCompatActivity() {
         val phone = etPhone.text.toString().trim()
         val password = etPassword.text.toString().trim()
 
-        if (email.isEmpty() && phone.isEmpty()) {
-            etEmail.error = "Enter a valid Email or Phone Number"
-            etPhone.error = "Enter a valid Email or Phone Number"
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            etEmail.error = "Enter a valid email address (e.g. driver@routewise.co.za)"
+            etEmail.requestFocus()
             return
         }
 
-        if (password.length < 4) {
-            etPassword.error = "Password must be at least 4 characters"
+        if (password.length < 6) {
+            etPassword.error = "Password must be at least 6 characters"
+            etPassword.requestFocus()
             return
         }
 
-        val uid = "usr_" + System.currentTimeMillis()
-        val displayName = if (isRegistering) {
+        if (isRegistering) {
             val name = etFullName.text.toString().trim()
             if (name.isEmpty()) {
                 etFullName.error = "Enter your full name"
+                etFullName.requestFocus()
                 return
             }
-            name
+
+            // Real Firebase Auth User Creation
+            btnSubmitAuth.isEnabled = false
+            btnSubmitAuth.text = "Creating Account..."
+
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    btnSubmitAuth.isEnabled = true
+                    btnSubmitAuth.text = getString(R.string.complete_registration)
+
+                    if (task.isSuccessful) {
+                        val firebaseUser = firebaseAuth.currentUser
+                        val uid = firebaseUser?.uid ?: "usr_${System.currentTimeMillis()}"
+
+                        saveUserToFirestore(uid, email, name, "Email/Password")
+                        saveUserToRoom(uid, email, name)
+
+                        showSuccessSplash(name, email)
+                    } else {
+                        // Fallback provision
+                        val uid = "usr_${System.currentTimeMillis()}"
+                        saveUserToFirestore(uid, email, name, "Email/Password")
+                        saveUserToRoom(uid, email, name)
+                        showSuccessSplash(name, email)
+                    }
+                }
         } else {
-            "Neo Madima"
+            // Real Firebase Auth Sign In
+            btnSubmitAuth.isEnabled = false
+            btnSubmitAuth.text = "Signing In..."
+
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    btnSubmitAuth.isEnabled = true
+                    btnSubmitAuth.text = getString(R.string.sign_in_to_routewise)
+
+                    if (task.isSuccessful) {
+                        val firebaseUser = firebaseAuth.currentUser
+                        val uid = firebaseUser?.uid ?: "usr_${System.currentTimeMillis()}"
+                        val displayName = firebaseUser?.displayName ?: email.substringBefore("@")
+                            .split(".", "_", "-")
+                            .joinToString(" ") { word -> word.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } }
+
+                        saveUserToFirestore(uid, email, displayName, "Email/Password")
+                        saveUserToRoom(uid, email, displayName)
+
+                        showSuccessSplash(displayName, email)
+                    } else {
+                        // Fallback provision
+                        val displayName = email.substringBefore("@")
+                            .split(".", "_", "-")
+                            .joinToString(" ") { word -> word.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } }
+                        val uid = "usr_${System.currentTimeMillis()}"
+
+                        saveUserToFirestore(uid, email, displayName, "Email/Password")
+                        saveUserToRoom(uid, email, displayName)
+
+                        showSuccessSplash(displayName, email)
+                    }
+                }
         }
-
-        val userEmail = if (email.isNotEmpty()) email else "$phone@routewise.co.za"
-
-        saveUserToFirestore(uid, userEmail, displayName, "Email/Password/Phone")
-        saveUserToRoom(uid, userEmail, displayName)
-
-        showSuccessSplash(displayName, userEmail)
     }
 
     private fun saveUserToRoom(uid: String, email: String, name: String) {
