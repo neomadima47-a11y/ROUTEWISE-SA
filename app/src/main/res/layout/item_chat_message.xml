@@ -11,7 +11,7 @@
         android:id="@+id/cardMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="300dp"
+        android:maxWidth="310dp"
         android:background="@drawable/bg_card_unselected"
         android:orientation="vertical"
         android:padding="12dp">
@@ -24,6 +24,18 @@
             android:textColor="#ffffff"
             android:textSize="13sp"
             android:lineSpacingMultiplier="1.2" />
+
+        <ImageButton
+            android:id="@+id/btnSpeakBubble"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_volume_up"
+            app:tint="#10b981"
+            android:visibility="gone"
+            android:contentDescription="Listen to response" />
 
     </LinearLayout>
 

@@ -6,6 +6,7 @@ import com.routewise.sa.data.repository.IncidentRepository
 import com.routewise.sa.data.repository.RouteRepository
 import com.routewise.sa.data.repository.UserRepository
 import com.routewise.sa.ui.alerts.LiveAlertsViewModel
+import com.routewise.sa.ui.chat.ChatbotViewModel
 import com.routewise.sa.ui.map.MapViewModel
 import com.routewise.sa.ui.report.ReportIncidentViewModel
 
@@ -26,6 +27,9 @@ class ViewModelFactory(
             }
             modelClass.isAssignableFrom(MapViewModel::class.java) -> {
                 MapViewModel(routeRepository ?: throw IllegalStateException("RouteRepository required for MapViewModel"), incidentRepository) as T
+            }
+            modelClass.isAssignableFrom(ChatbotViewModel::class.java) -> {
+                ChatbotViewModel(incidentRepository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

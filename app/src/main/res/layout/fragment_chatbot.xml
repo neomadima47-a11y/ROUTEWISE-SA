@@ -48,14 +48,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_chat"
+                    android:text="AI Scout Copilot"
                     android:textColor="#ffffff"
                     android:textSize="14sp"
                     android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/online"
+                    android:text="Groq Llama-3"
                     android:textColor="#10b981"
                     android:textSize="9sp"
                     android:textStyle="bold"
@@ -68,10 +68,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ai_desc"
+                android:text="Hands-Free Voice Hazard &amp; Weather Assistant"
                 android:textColor="#94a3b8"
                 android:textSize="10sp" />
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnToggleVoice"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_rounded_emerald"
+            android:src="@drawable/ic_volume_up"
+            app:tint="#020617"
+            android:padding="8dp"
+            android:contentDescription="Voice Toggle" />
     </LinearLayout>
 
     <!-- Chat Messages -->
@@ -94,13 +104,24 @@
         android:padding="6dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <ImageButton
+            android:id="@+id/btnHandsFreeDictate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_circle_slate"
+            android:src="@drawable/ic_warning"
+            app:tint="#10b981"
+            android:padding="8dp"
+            android:contentDescription="Talk Hands Free" />
+
         <EditText
             android:id="@+id/etChatInput"
             android:layout_width="0dp"
             android:layout_height="44dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:hint="@string/chat_hint"
+            android:hint="Ask AI Scout or dictate hazard..."
             android:textColorHint="#64748b"
             android:textColor="#ffffff"
             android:textSize="13sp"
